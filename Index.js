@@ -39,12 +39,12 @@ app.get('/', (req, res) => {
 
 //view post
 app.get('/posts',(req,res)=>{
-    res.render("index.ejs",{posts});
+    res.render("index",{posts});
 });
 
 //view new page
 app.get('/posts/new',(req,res)=>{
-    res.render("new.ejs",{posts});
+    res.render("new",{posts});
 });
 
 //add post
@@ -59,14 +59,14 @@ app.post('/posts', (req, res) => {
 app.get('/posts/:id',(req, res) => {
     let { id } = req.params; 
     let post= posts.find((p)=>{return id==p.id;});
-    res.render("show.ejs",{post})
+    res.render("show",{post})
 });
 
 //view edit page of a perticular user
 app.get('/posts/:id/edit',(req, res) => {
     let { id } = req.params; 
     let post= posts.find((p)=>{return id==p.id;});
-    res.render("edit.ejs",{post})
+    res.render("edit",{post})
 });
 
 //update perticular content
