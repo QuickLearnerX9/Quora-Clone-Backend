@@ -1,0 +1,144 @@
+/* Quora-inspired Global Stylesheet (style.css) */
+
+:root {
+    --quora-red: #b92b27;
+    --quora-red-hover: #a0231f;
+    --bg-color: #f1f2f2;
+    --card-bg: #ffffff;
+    --text-primary: #282829;
+    --text-secondary: #636466;
+    --border-color: #dee0e1;
+    --radius: 8px;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.5;
+    padding: 2rem 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Page Titles */
+h1 {
+    font-size: 1.75rem;
+    color: var(--quora-red);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+/* Card Styling (Index feed, Info view, Edit/New forms) */
+body > div, form {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow);
+}
+
+/* Post Header / User Info */
+h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+h3 {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+}
+
+/* Post Content */
+p {
+    margin: 0.75rem 0 1rem;
+    font-size: 1rem;
+    color: #333;
+    white-space: pre-line;
+}
+
+/* Form Controls (Inputs & Textareas) */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: calc(var(--radius) - 2px);
+    font-family: inherit;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--quora-red);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Buttons & Action Links */
+button {
+    background-color: #f7f7f8;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 0.4rem 0.85rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+button:hover {
+    background-color: #eef0f1;
+}
+
+/* Primary Action Buttons (Submit / Create) */
+button[type="submit"], 
+#create {
+    background-color: var(--quora-red);
+    color: #ffffff;
+    border: none;
+}
+
+button[type="submit"]:hover, 
+#create:hover {
+    background-color: var(--quora-red-hover);
+}
+
+/* Inline Action Row for Feed Buttons */
+body > div form {
+    display: inline;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a button {
+    margin-right: 0.25rem;
+}
